@@ -1,8 +1,13 @@
+import Landing from "./pages/Landing";
+
 function App()
 {
-  return (
-    <h1>Greetings fellow humans</h1>
-  );
+    return (
+        <div>
+            <h1>Jobify</h1>
+            <Landing />
+        </div>
+    );
 }
 
 export default App;
