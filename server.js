@@ -1,7 +1,9 @@
 import express from "express";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
+import dotenv from "dotenv";
 const app = express();
+dotenv.config(); //loads environment variables from .env in root
 
 //middleware
 
