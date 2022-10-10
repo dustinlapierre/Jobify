@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 
-const register = async (req, res) =>
+const register = async (req, res, next) =>
 {
     try
     {
@@ -9,7 +9,8 @@ const register = async (req, res) =>
     }
     catch(error)
     {
-        res.status(500).json({msg: "there was an error"});
+        //pass it onto the error handler middleware
+        next(error);
     }
 };
 
