@@ -2,6 +2,7 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 dotenv.config(); //loads environment variables from .env in root
+import "express-async-errors"; //allows you to avoid try/catch in controllers
 
 //db and auth
 import connectDB from "./db/connect.js";
