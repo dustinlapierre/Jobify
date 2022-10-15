@@ -1,17 +1,10 @@
 import User from "../models/User.js";
+import {StatusCodes} from "http-status-codes";
 
 const register = async (req, res, next) =>
 {
-    try
-    {
-        const user = await User.create(req.body);
-        res.status(201).json({user});
-    }
-    catch(error)
-    {
-        //pass it onto the error handler middleware
-        next(error);
-    }
+    const user = await User.create(req.body);
+    res.status(StatusCodes.OK).json({user});
 };
 
 const login = async (req, res) =>
