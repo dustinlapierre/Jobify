@@ -45,4 +45,10 @@ UserSchema.pre("save", async function ()
     this.password = await bcrypt.hash(this.password, salt);
 });
 
+//custom instance method
+UserSchema.methods.createJWT = function () 
+{
+    console.log(this);
+};
+
 export default mongoose.model("User", UserSchema);
